@@ -1,0 +1,15 @@
+{
+  "name": "angular-phonecat",
+  "version": "1.0.0",
+  "description": "Example app using angularJS and express.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "zalapeach@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "2.0.4"
+  }
+}
