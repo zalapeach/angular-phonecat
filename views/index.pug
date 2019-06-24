@@ -1,17 +1,20 @@
 doctype html
-html(lang='en', ng-app)
+html(lang='en', ng-app='phonecatApp')
   head
     meta(charset='utf-8')
     title My HTML File
     link(rel='stylesheet', href='')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js')
-  body
-    p Nothing here {{ 'yet' + '!' }}
+    script(src='/javascripts/vendor/angular.js')
+    script(src='/javascripts/app.js')
+  body(ng-controller='PhoneListController')
+    p hello {{ name }}!
     ul
-      li
-        span Nexus S.
-        p Fast just got faster with Nexus S.
-      li
-        span Motorola XOOM with Wi-Fi
-        p The Next, Next Generation Tablet
-    p Total Number of phones: 2
+      li(ng-repeat='phone in phones')
+        span {{ phone.name }}
+        p {{ phone.snippet }}
+    p Total Number of phones: {{ phones.length }}
+    table
+      tr
+        th(colspan='8') Row Number
+      tr(ng-repeat='i in [1, 2, 3, 4, 5, 6, 7, 8]')
+        td(ng-repeat='j in [1, 2, 3, 4, 5, 6, 7, 8]') {{ i }}, {{ j }}
