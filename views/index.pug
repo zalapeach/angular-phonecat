@@ -6,13 +6,9 @@ html(lang='en', ng-app='phonecatApp')
     link(rel='stylesheet', href='')
     script(src='/javascripts/vendor/angular.js')
     script(src='/javascripts/app.js')
-  body(ng-controller='PhoneListController')
-    p hello {{ name }}!
-    ul
-      li(ng-repeat='phone in phones')
-        span {{ phone.name }}
-        p {{ phone.snippet }}
-    p Total Number of phones: {{ phones.length }}
+    script(src='/javascripts/phone-list.component.js')
+  body
+    phone-list
     table
       tr
         th(colspan='8') Row Number
