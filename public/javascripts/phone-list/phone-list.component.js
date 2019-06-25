@@ -6,7 +6,7 @@ angular
     var self = this;
     self.orderProp = 'age';
     self.user = 'World'
-    $http.get('javascripts/phones.json').then(function(response) {
+    $http.get('javascripts/phones/phones.json').then(function(response) {
       self.phones = response.data;
     });
   }]
