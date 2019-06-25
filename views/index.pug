@@ -11,6 +11,8 @@ html(lang='en', ng-app='phonecatApp')
     script(src='/javascripts/vendor/angular-route.js')
     script(src='/javascripts/app.module.js')
     script(src='/javascripts/app.config.js')
+    script(src='/javascripts/core/core.module.js')
+    script(src='/javascripts/core/checkmark/checkmark.filter.js')
     script(src='/javascripts/phone-list/phone-list.module.js')
     script(src='/javascripts/phone-list/phone-list.component.js')
     script(src='/javascripts/phone-detail/phone-detail.module.js')
@@ -22,3 +24,14 @@ html(lang='en', ng-app='phonecatApp')
         th(colspan='8') Row Number
       tr(ng-repeat='i in [1, 2, 3, 4, 5, 6, 7, 8]')
         td(ng-repeat='j in [1, 2, 3, 4, 5, 6, 7, 8]') {{ i }}, {{ j }}
+    p
+      span {{ 'lower cap string' | uppercase }}
+    p
+      span {{{ foo: bar, baz: 42 } | json }}
+    p
+      span {{ 1459461289000 | date }}
+    p
+      span {{ 1459461289000 | date:'MM/dd/yyyy @ h:mma' }}
+    p
+      input(ng-model="userInput")
+      span Uppercased: {{ userInput | uppercase }}
