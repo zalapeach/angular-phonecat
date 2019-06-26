@@ -7,18 +7,27 @@ html(lang='en', ng-app='phonecatApp')
       href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
       integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T',
       crossorigin='anonymous')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/app.animations.css')
+    script(src='/javascripts/vendor/jquery.js')
     script(src='/javascripts/vendor/angular.js')
+    script(src='/javascripts/vendor/angular-resource.js')
     script(src='/javascripts/vendor/angular-route.js')
+    script(src='/javascripts/vendor/angular-animate.js')
     script(src='/javascripts/app.module.js')
     script(src='/javascripts/app.config.js')
+    script(src='/javascripts/app.animations.js')
     script(src='/javascripts/core/core.module.js')
     script(src='/javascripts/core/checkmark/checkmark.filter.js')
+    script(src='/javascripts/core/phone/phone.module.js')
+    script(src='/javascripts/core/phone/phone.service.js')
     script(src='/javascripts/phone-list/phone-list.module.js')
     script(src='/javascripts/phone-list/phone-list.component.js')
     script(src='/javascripts/phone-detail/phone-detail.module.js')
     script(src='/javascripts/phone-detail/phone-detail.component.js')
   body
-    div(ng-view)
+    .view-container
+      .view-frame(ng-view)
     table.table
       tr
         th(colspan='8') Row Number

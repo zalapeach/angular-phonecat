@@ -1,13 +1,10 @@
 angular
-.module('phonecatApp')
+.module('phoneList')
 .component('phoneList', {
   templateUrl: '/javascripts/phone-list/phone-list.template.html',
-  controller: ['$http', function PhoneListController($http) {
-    var self = this;
-    self.orderProp = 'age';
-    self.user = 'World'
-    $http.get('javascripts/phones/phones.json').then(function(response) {
-      self.phones = response.data;
-    });
+  controller: ['Phone', function PhoneListController(Phone) {
+    this.user = 'World'
+    this.phones = Phone.query();
+    this.orderProp = 'age';
   }]
 });

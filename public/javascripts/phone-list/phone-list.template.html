@@ -17,11 +17,12 @@
     <div class='col-md-10'>
       <p>hello {{ $ctrl.user }}</p>
       <ul class='phones'>
-        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp", class='thumbnail'>
-          <a href='#!/phones/{{ phone.id }}', class='thumb'>
-            <img ng-src='{{ phone.imageUrl }}', alt='{{ phone.name }}'/>
+        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp"
+          class='thumbnail phone-list-item'>
+          <a href='#!/phones/{{ phone.id }}' class='thumb'>
+            <img ng-src='{{ phone.imageUrl }}' alt='{{ phone.name }}' width='115' height='115' />
           </a>
-          <a href='#!/phone/{{ phone.id }}'>{{ phone.name }}</a>
+          <a href='#!/phones/{{ phone.id }}'>{{ phone.name }}</a>
           <p>{{ phone.snippet }}</p>
         </li>
       </ul>
